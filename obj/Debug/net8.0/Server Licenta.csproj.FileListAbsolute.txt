@@ -1,0 +1,181 @@
+E:\licenta\Server Licenta\bin\Debug\net8.0\appsettings.Development.json
+E:\licenta\Server Licenta\bin\Debug\net8.0\appsettings.json
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.exe
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.deps.json
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.runtimeconfig.json
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.pdb
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.csproj.AssemblyReference.cache
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.GeneratedMSBuildEditorConfig.editorconfig
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.AssemblyInfoInputs.cache
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.AssemblyInfo.cs
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.csproj.CoreCompileInputs.cache
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.MvcApplicationPartsAssemblyInfo.cs
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.MvcApplicationPartsAssemblyInfo.cache
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets.build.json
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets.development.json
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.Server Licenta.Microsoft.AspNetCore.StaticWebAssets.props
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.build.Server Licenta.props
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Server Licenta.props
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Server Licenta.props
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets.pack.json
+E:\licenta\Server Licenta\obj\Debug\net8.0\scopedcss\bundle\Server Licenta.styles.css
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server L.2FF963B4.Up2Date
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.dll
+E:\licenta\Server Licenta\obj\Debug\net8.0\refint\Server Licenta.dll
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.pdb
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.genruntimeconfig.cache
+E:\licenta\Server Licenta\obj\Debug\net8.0\ref\Server Licenta.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Azure.Core.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Azure.Identity.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.ClientModel.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Formats.Asn1.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.IO.Pipelines.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Memory.Data.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Runtime.Caching.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Text.Json.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\licenta\Server Licenta\bin\Debug\net8.0\Server Licenta.staticwebassets.endpoints.json
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.Server Licenta.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\licenta\Server Licenta\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\licenta\Server Licenta\obj\Debug\net8.0\Server Licenta.sourcelink.json
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\appsettings.json
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.exe
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.deps.json
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.runtimeconfig.json
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.pdb
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.csproj.AssemblyReference.cache
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.AssemblyInfoInputs.cache
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.AssemblyInfo.cs
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.csproj.CoreCompileInputs.cache
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.Server Licenta.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.build.Server Licenta.props
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Server Licenta.props
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Server Licenta.props
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\scopedcss\bundle\Server Licenta.styles.css
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server L.2FF963B4.Up2Date
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.dll
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\refint\Server Licenta.dll
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.pdb
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.genruntimeconfig.cache
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\ref\Server Licenta.dll
+C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.staticwebassets.endpoints.json
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.Server Licenta.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
