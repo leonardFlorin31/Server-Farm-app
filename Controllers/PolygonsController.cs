@@ -142,14 +142,15 @@ namespace Server_Licenta.Controllers
             }
         }
 
-        // DELETE: api/Polygons/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePolygon(Guid id, [FromQuery] Guid userId)
+        // DELETE: api/Polygons/
+        [HttpDelete("{polygonName}")]
+        public async Task<IActionResult> DeletePolygon([FromRoute] string polygonName, [FromQuery] Guid userId)
         {
             try
             {
                 var polygon = await _context.Polygon
-                    .FirstOrDefaultAsync(p => p.PolygonId == id && p.CreatedByUserId == userId);
+                    .Include(p => p.Points)
+                    .FirstOrDefaultAsync(p => p.PolygonName == polygonName && p.CreatedByUserId == userId);
 
                 if (polygon == null)
                 {
