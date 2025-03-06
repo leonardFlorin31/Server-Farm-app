@@ -52,6 +52,14 @@ namespace Server_Licenta
                 .HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
+
+            // Configure Polygon relationships
+            modelBuilder.Entity<Polygon>()
+        .HasMany(p => p.Points)
+        .WithOne(pp => pp.Polygon)
+        .HasForeignKey(pp => pp.PolygonId)
+        .OnDelete(DeleteBehavior.Cascade);
+            //15277e91-643b-4c66-88f2-53054d128b39 - keni : userid
         }
     }
 }
