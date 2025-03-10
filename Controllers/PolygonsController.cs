@@ -109,6 +109,46 @@ namespace Server_Licenta.Controllers
             }
         }
 
+        [HttpGet("names")]
+        public async Task<IActionResult> GetPolygonNames([FromQuery] Guid userId)
+        {
+            try
+            {
+                // Găsim creatorii de roluri pentru utilizatorul dat
+                var roleCreators = await _context.UserRoles
+                    .Where(ur => ur.UserId == userId)
+                    .Select(ur => ur.Role.CreatedByUserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Găsim toți utilizatorii care au roluri create de aceiași creatori
+                var relatedUsers = await _context.UserRoles
+                    .Where(ur => roleCreators.Contains(ur.Role.CreatedByUserId))
+                    .Select(ur => ur.UserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Selectăm doar Id-ul și Numele poligoanelor pe baza aceleiași logici de acces
+                var polygonNames = await _context.Polygon
+                    .Where(p =>
+                        p.CreatedByUserId == userId ||
+                        relatedUsers.Contains(p.CreatedByUserId))
+                    .Select(p => new
+                    {
+                        Id = p.PolygonId,
+                        Name = p.PolygonName
+                    })
+                    .ToListAsync();
+
+                return Ok(polygonNames);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
         // POST: api/Polygons
         [HttpPost]
         public async Task<IActionResult> CreatePolygon([FromBody] CreatePolygonRequest request)

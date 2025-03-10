@@ -140,6 +140,28 @@
         }
       }
     },
+    "/api/Polygons/names": {
+      "get": {
+        "tags": [
+          "Polygons"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Polygons/{polygonName}": {
       "delete": {
         "tags": [

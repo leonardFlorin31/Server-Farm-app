@@ -104,5 +104,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server_Licenta.Controllers.PolygonsController",
+    "Method": "GetPolygonNames",
+    "RelativePath": "api/Polygons/names",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
