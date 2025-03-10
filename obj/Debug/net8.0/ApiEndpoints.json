@@ -87,14 +87,14 @@
   {
     "ContainingType": "Server_Licenta.Controllers.PolygonsController",
     "Method": "DeletePolygon",
-    "RelativePath": "api/Polygons/{id}",
+    "RelativePath": "api/Polygons/{polygonName}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Name": "polygonName",
+        "Type": "System.String",
         "IsRequired": true
       },
       {

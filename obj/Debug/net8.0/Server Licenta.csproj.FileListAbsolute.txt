@@ -179,3 +179,4 @@ C:\Users\leofl\Desktop\Server Licenta\bin\Debug\net8.0\Server Licenta.staticweba
 C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets\msbuild.Server Licenta.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\leofl\Desktop\Server Licenta\obj\Debug\net8.0\Server Licenta.sourcelink.json

@@ -1,0 +1,34 @@
+    // Configure Polygon relationships
+    modelBuilder.Entity<Polygon>()
+.HasMany(p => p.Points)
+.WithOne(pp => pp.Polygon)
+.HasForeignKey(pp => pp.PolygonId)
+.OnDelete(DeleteBehavior.Cascade);
+    //15277e91-643b-4c66-88f2-53054d128b39 - keni : userid
+
+
+// DELETE: api/Polygons/
+[HttpDelete("{polygonName}")]
+public async Task<IActionResult> DeletePolygon([FromRoute] string polygonName, [FromQuery] Guid userId)
+{
+    try
+    {
+        var polygon = await _context.Polygon
+            .Include(p => p.Points)
+            .FirstOrDefaultAsync(p => p.PolygonName == polygonName && p.CreatedByUserId == userId);
+
+        if (polygon == null)
+        {
+            return NotFound();
+        }
+
+        _context.Polygon.Remove(polygon);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, $"Internal server error: {ex.Message}");
+    }
+}

@@ -46,9 +46,9 @@
               "Title": "PolygonsController.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PolygonsController.cs",
-              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs",
-              "RelativeToolTip": "Controllers\\PolygonsController.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAmwKAAAAATAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs*",
+              "RelativeToolTip": "Controllers\\PolygonsController.cs*",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA4wEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T17:17:57.023Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "AppDbContext.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAwwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T19:26:37.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T19:26:37.001Z"
             },
             {
               "$type": "Document",
@@ -76,8 +75,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:05:08.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:05:08.881Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-11T19:33:18.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T19:33:18.324Z"
             },
             {
               "$type": "Document",

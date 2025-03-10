@@ -26,14 +26,27 @@ namespace Server_Licenta.Controllers
         {
             try
             {
+                // Find the role creators for the user's roles
+                var roleCreators = await _context.UserRoles
+                    .Where(ur => ur.UserId == userId)
+                    .Select(ur => ur.Role.CreatedByUserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Find all users who have roles created by the same creators
+                var relatedUsers = await _context.UserRoles
+                    .Where(ur => roleCreators.Contains(ur.Role.CreatedByUserId))
+                    .Select(ur => ur.UserId)
+                    .Distinct()
+                    .ToListAsync();
+
                 var polygons = await _context.Polygon
                     .Include(p => p.Points)
-                    .Where(p => p.CreatedByUserId == userId ||
-                        _context.UserRoles
-                            .Include(ur => ur.Role) // Include Role navigation property
-                            .Any(ur =>
-                                ur.UserId == userId &&
-                                ur.Role.CreatedByUserId == p.CreatedByUserId))
+                    .Where(p =>
+                        // Own polygons
+                        p.CreatedByUserId == userId ||
+                        // Polygons from users with roles created by the same creator
+                        relatedUsers.Contains(p.CreatedByUserId))
                     .Select(p => new PolygonDto
                     {
                         Id = p.PolygonId,
@@ -51,9 +64,11 @@ namespace Server_Licenta.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, ex.Message);
             }
         }
+
+
 
         // GET: api/Polygons/5
         [HttpGet("{id}")]

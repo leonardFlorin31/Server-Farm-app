@@ -138,19 +138,20 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Polygons/{polygonName}": {
       "delete": {
         "tags": [
           "Polygons"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "polygonName",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           },
           {
