@@ -140,6 +140,8 @@ namespace Server_Licenta.Controllers
                     })
                     .ToListAsync();
 
+                Console.WriteLine($"Poligoane găsite: {polygonNames.Count}");
+
                 return Ok(polygonNames);
             }
             catch (Exception ex)
