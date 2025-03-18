@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:grainparceldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\controllers\\polygonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:controllers\\polygonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,8 +54,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -64,7 +68,7 @@
               "RelativeDocumentMoniker": "GrainParcelData.cs",
               "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\GrainParcelData.cs",
               "RelativeToolTip": "GrainParcelData.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T18:48:05.475Z",
               "EditorCaption": ""
@@ -77,14 +81,10 @@
               "RelativeDocumentMoniker": "Controllers\\ParcelDataController.cs",
               "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\ParcelDataController.cs*",
               "RelativeToolTip": "Controllers\\ParcelDataController.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAUwEkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAiwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T18:07:39.229Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -124,20 +124,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PolygonsController.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PolygonsController.cs",
               "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs",
               "RelativeToolTip": "Controllers\\PolygonsController.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAcwMUAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAUwMUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T17:17:57.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AppDbContext.cs",
@@ -145,8 +145,7 @@
               "RelativeToolTip": "AppDbContext.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBYAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T19:26:37.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T19:26:37.001Z"
             },
             {
               "$type": "Document",
@@ -158,8 +157,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:05:08.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:05:08.881Z"
             },
             {
               "$type": "Document",

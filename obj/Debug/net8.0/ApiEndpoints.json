@@ -53,15 +53,15 @@
   },
   {
     "ContainingType": "Server_Licenta.Controllers.ParcelDataController",
-    "Method": "CreateParcelData",
+    "Method": "CreateOrUpdateParcelData",
     "RelativePath": "api/ParcelData",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "parcelData",
-        "Type": "GrainParcelData",
+        "Name": "request",
+        "Type": "CreateGrainParcelDataRequest",
         "IsRequired": true
       }
     ],

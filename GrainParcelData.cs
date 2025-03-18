@@ -26,7 +26,8 @@ public class GrainParcelData
 
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
-    
+
+    [JsonIgnore]
     [ForeignKey("PolygonId")]
     public Polygon Polygon { get; set; } = null!;
 }

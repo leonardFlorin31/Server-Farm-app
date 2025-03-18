@@ -75,15 +75,42 @@ namespace Server_Licenta.Controllers
 
         // POST: api/ParcelData
         [HttpPost]
-        public async Task<ActionResult<GrainParcelData>> CreateParcelData([FromBody] GrainParcelData parcelData)
+        public async Task<ActionResult<GrainParcelData>> CreateOrUpdateParcelData([FromBody] CreateGrainParcelDataRequest request)
         {
-            if (parcelData == null)
+            if (request == null)
             {
                 return BadRequest(new { message = "Invalid data" });
             }
 
-            parcelData.Id = Guid.NewGuid();
-            parcelData.CreatedDate = DateTime.UtcNow;
+            // Căutăm toate parcelele existente pentru acel PolygonId
+            var existingParcels = await _context.GrainParcelData
+                .Where(p => p.PolygonId == request.PolygonId)
+                .ToListAsync();
+
+            if (existingParcels.Any())
+            {
+                // 1. Alegem să ștergem parcelele existente și să adăugăm una nouă (opțiunea 1)
+                _context.GrainParcelData.RemoveRange(existingParcels);
+                await _context.SaveChangesAsync();  // Salvăm după ștergere pentru siguranță
+
+            }
+
+            // Creăm o nouă parcelă
+            var parcelData = new GrainParcelData
+            {
+                Id = Guid.NewGuid(),
+                PolygonId = request.PolygonId,
+                CropType = request.CropType,
+                ParcelArea = request.ParcelArea ?? 0,
+                IrrigationType = request.IrrigationType,
+                FertilizerUsed = request.FertilizerUsed ?? 0,
+                PesticideUsed = request.PesticideUsed ?? 0,
+                Yield = request.Yield ?? 0,
+                SoilType = request.SoilType,
+                Season = request.Season,
+                WaterUsage = request.WaterUsage ?? 0,
+                CreatedDate = DateTime.UtcNow
+            };
 
             _context.GrainParcelData.Add(parcelData);
             await _context.SaveChangesAsync();
@@ -106,6 +133,7 @@ namespace Server_Licenta.Controllers
 
             return NoContent();
         }
+
     }
 }
 

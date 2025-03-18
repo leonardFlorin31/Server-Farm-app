@@ -103,17 +103,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GrainParcelData"
+                "$ref": "#/components/schemas/CreateGrainParcelDataRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GrainParcelData"
+                "$ref": "#/components/schemas/CreateGrainParcelDataRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GrainParcelData"
+                "$ref": "#/components/schemas/CreateGrainParcelDataRequest"
               }
             }
           }
@@ -410,6 +410,57 @@
   },
   "components": {
     "schemas": {
+      "CreateGrainParcelDataRequest": {
+        "type": "object",
+        "properties": {
+          "polygonId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "cropType": {
+            "type": "string",
+            "nullable": true
+          },
+          "parcelArea": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "irrigationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fertilizerUsed": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "pesticideUsed": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "yield": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "soilType": {
+            "type": "string",
+            "nullable": true
+          },
+          "season": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterUsage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreatePolygonRequest": {
         "type": "object",
         "properties": {
@@ -490,9 +541,6 @@
           "createdDate": {
             "type": "string",
             "format": "date-time"
-          },
-          "polygon": {
-            "$ref": "#/components/schemas/Polygon"
           }
         },
         "additionalProperties": false
@@ -521,64 +569,6 @@
           "longitude": {
             "type": "number",
             "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Polygon": {
-        "type": "object",
-        "properties": {
-          "polygonId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "polygonName": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdByUserId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "points": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PolygonPoint"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PolygonPoint": {
-        "type": "object",
-        "properties": {
-          "pointId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "polygonId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "latitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "longitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "order": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "polygon": {
-            "$ref": "#/components/schemas/Polygon"
           }
         },
         "additionalProperties": false
