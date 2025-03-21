@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:controllers\\parceldatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\controllers\\animalparceldatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:controllers\\animalparceldatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|c:\\users\\leofl\\desktop\\server licenta\\grainparceldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C72E94B3-3C3D-461B-9240-5B226A8689D0}|Server Licenta.csproj|solutionrelative:grainparceldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,15 +58,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnimalParcelDataController.cs",
+              "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\AnimalParcelDataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnimalParcelDataController.cs",
+              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\AnimalParcelDataController.cs",
+              "RelativeToolTip": "Controllers\\AnimalParcelDataController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:16:53.279Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GrainParcelData.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\GrainParcelData.cs",
               "RelativeDocumentMoniker": "GrainParcelData.cs",
@@ -70,8 +87,7 @@
               "RelativeToolTip": "GrainParcelData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T18:48:05.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T18:48:05.475Z"
             },
             {
               "$type": "Document",
@@ -79,16 +95,16 @@
               "Title": "ParcelDataController.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\ParcelDataController.cs",
               "RelativeDocumentMoniker": "Controllers\\ParcelDataController.cs",
-              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\ParcelDataController.cs*",
-              "RelativeToolTip": "Controllers\\ParcelDataController.cs*",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAGgAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\ParcelDataController.cs",
+              "RelativeToolTip": "Controllers\\ParcelDataController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T18:07:39.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": ".gitattributes",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\.gitattributes",
               "RelativeDocumentMoniker": ".gitattributes",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -112,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -124,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PolygonsController.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\PolygonsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PolygonsController.cs",
@@ -132,12 +148,11 @@
               "RelativeToolTip": "Controllers\\PolygonsController.cs",
               "ViewState": "AgIAAIUAAAAAAAAAAAAUwMUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T17:17:57.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T17:17:57.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AppDbContext.cs",
@@ -149,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -161,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -173,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Server Licenta.http",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Server Licenta.http",
               "RelativeDocumentMoniker": "Server Licenta.http",
@@ -185,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

@@ -5,6 +5,221 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/AnimalParcelData": {
+      "get": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnimalParcelDataRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnimalParcelDataRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnimalParcelDataRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AnimalParcelData/{id}": {
+      "get": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnimalParcelData"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AnimalParcelData/polygon/{polygonId}": {
+      "get": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "parameters": [
+          {
+            "name": "polygonId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnimalParcelData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AnimalParcelData"
+        ],
+        "parameters": [
+          {
+            "name": "polygonId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auth/login": {
       "post": {
         "tags": [
@@ -410,6 +625,87 @@
   },
   "components": {
     "schemas": {
+      "AnimalParcelData": {
+        "required": [
+          "animalType",
+          "polygonId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "polygonId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "animalType": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "numberOfAnimals": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "feedType": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterConsumption": {
+            "type": "number",
+            "format": "double"
+          },
+          "veterinaryVisits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wasteManagement": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAnimalParcelDataRequest": {
+        "type": "object",
+        "properties": {
+          "polygonId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "animalType": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfAnimals": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "feedType": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterConsumption": {
+            "type": "number",
+            "format": "double"
+          },
+          "veterinaryVisits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wasteManagement": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateGrainParcelDataRequest": {
         "type": "object",
         "properties": {

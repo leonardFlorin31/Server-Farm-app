@@ -13,8 +13,10 @@ namespace Server_Licenta
         public DbSet<Polygon> Polygon { get; set; }
         public DbSet<PolygonPoint> PolygonPoints { get; set; }
 
-        public DbSet<GrainParcelData> GrainParcelData { get; set; } 
-        //public DbSet<AnimalParcelData> AnimalParcelData { get; set; }
+        public DbSet<GrainParcelData> GrainParcelData { get; set; }
+
+        public DbSet<AnimalParcelData> AnimalParcelData { get; set; }
+        
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
