@@ -205,9 +205,26 @@ namespace Server_Licenta.Controllers
         {
             try
             {
+                // Găsim creatorii de roluri pentru utilizatorul dat
+                var roleCreators = await _context.UserRoles
+                    .Where(ur => ur.UserId == userId)
+                    .Select(ur => ur.Role.CreatedByUserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Găsim toți utilizatorii care au roluri create de aceiași creatori
+                var relatedUsers = await _context.UserRoles
+                    .Where(ur => roleCreators.Contains(ur.Role.CreatedByUserId))
+                    .Select(ur => ur.UserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Căutăm poligonul după nume și verificăm dacă CreatedByUserId
+                // este fie utilizatorul curent, fie unul din relatedUsers
                 var polygon = await _context.Polygon
                     .Include(p => p.Points)
-                    .FirstOrDefaultAsync(p => p.PolygonName == polygonName && p.CreatedByUserId == userId);
+                    .FirstOrDefaultAsync(p => p.PolygonName == polygonName &&
+                        (p.CreatedByUserId == userId || relatedUsers.Contains(p.CreatedByUserId)));
 
                 if (polygon == null)
                 {
