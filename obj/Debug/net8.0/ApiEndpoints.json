@@ -346,6 +346,32 @@
   },
   {
     "ContainingType": "Server_Licenta.Controllers.PolygonsController",
+    "Method": "UpdatePolygon",
+    "RelativePath": "api/Polygons/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Server_Licenta.Controllers.UpdatePolygonRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server_Licenta.Controllers.PolygonsController",
     "Method": "DeletePolygon",
     "RelativePath": "api/Polygons/{polygonName}",
     "HttpMethod": "DELETE",
@@ -356,6 +382,27 @@
         "Name": "polygonName",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server_Licenta.Controllers.PolygonsController",
+    "Method": "GetPolygonIdByName",
+    "RelativePath": "api/Polygons/id-by-name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "polygonName",
+        "Type": "System.String",
+        "IsRequired": false
       },
       {
         "Name": "userId",

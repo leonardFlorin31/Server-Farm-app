@@ -241,6 +241,125 @@ namespace Server_Licenta.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePolygon(Guid id, [FromBody] UpdatePolygonRequest request, [FromQuery] Guid userId)
+        {
+            try
+            {
+                // Găsim creatorii de roluri pentru utilizatorul curent
+                var roleCreators = await _context.UserRoles
+                    .Where(ur => ur.UserId == userId)
+                    .Select(ur => ur.Role.CreatedByUserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Găsim toți utilizatorii cu roluri create de aceiași creatori
+                var relatedUsers = await _context.UserRoles
+                    .Where(ur => roleCreators.Contains(ur.Role.CreatedByUserId))
+                    .Select(ur => ur.UserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Căutăm poligonul și verificăm permisiunile
+                var polygon = await _context.Polygon
+                    .FirstOrDefaultAsync(p => p.PolygonId == id &&
+                        (p.CreatedByUserId == userId || relatedUsers.Contains(p.CreatedByUserId)));
+
+                if (polygon == null)
+                {
+                    return NotFound();
+                }
+
+                // Actualizăm numele poligonului
+                polygon.PolygonName = request.Name;
+
+                // Ștergem punctele existente
+                var pointsToDelete = await _context.PolygonPoints
+                    .Where(p => p.PolygonId == id)
+                    .ToListAsync();
+
+                _context.PolygonPoints.RemoveRange(pointsToDelete);
+
+                // Adăugăm noile puncte, folosind Order-ul din request
+                var newPoints = request.Points
+                    .Select(p => new PolygonPoint
+                    {
+                        PointId = Guid.NewGuid(),
+                        PolygonId = id,
+                        Latitude = p.Latitude,
+                        Longitude = p.Longitude,
+                        Order = p.Order // Use the Order from the request
+                    })
+                    .ToList();
+
+                await _context.PolygonPoints.AddRangeAsync(newPoints);
+
+                // Salvăm modificările în baza de date
+                await _context.SaveChangesAsync();
+
+                // Reîncărcăm poligonul actualizat pentru răspuns
+                var updatedPolygon = await _context.Polygon
+                    .Include(p => p.Points)
+                    .FirstOrDefaultAsync(p => p.PolygonId == id);
+
+                return Ok(new PolygonDto
+                {
+                    Id = updatedPolygon.PolygonId,
+                    Name = updatedPolygon.PolygonName,
+                    Points = updatedPolygon.Points
+                        .OrderBy(pt => pt.Order)
+                        .Select(pt => new PointDto
+                        {
+                            Latitude = pt.Latitude,
+                            Longitude = pt.Longitude,
+                            Order = pt.Order
+                        })
+                        .ToList()
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("id-by-name")]
+        public async Task<IActionResult> GetPolygonIdByName([FromQuery] string polygonName, [FromQuery] Guid userId)
+        {
+            try
+            {
+                // Găsim creatorii de roluri pentru utilizatorul curent
+                var roleCreators = await _context.UserRoles
+                    .Where(ur => ur.UserId == userId)
+                    .Select(ur => ur.Role.CreatedByUserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Găsim toți utilizatorii cu roluri create de aceiași creatori
+                var relatedUsers = await _context.UserRoles
+                    .Where(ur => roleCreators.Contains(ur.Role.CreatedByUserId))
+                    .Select(ur => ur.UserId)
+                    .Distinct()
+                    .ToListAsync();
+
+                // Căutăm poligonul după nume și verificăm permisiunile
+                var polygon = await _context.Polygon
+                    .FirstOrDefaultAsync(p => p.PolygonName == polygonName &&
+                        (p.CreatedByUserId == userId || relatedUsers.Contains(p.CreatedByUserId)));
+
+                if (polygon == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(new { Id = polygon.PolygonId });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
     }
 
     // DTO Classes
@@ -269,6 +388,8 @@ namespace Server_Licenta.Controllers
     {
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
+
+        public int Order { get; set; }
     }
 
     public class PolygonResponseDto
@@ -335,6 +456,12 @@ namespace Server_Licenta.Controllers
         // Navigation properties
         public User User { get; set; }
         public Role Role { get; set; }
+    }
+
+    public class UpdatePolygonRequest
+    {
+        public string Name { get; set; }
+        public List<PointRequest> Points { get; set; }
     }
 
 
