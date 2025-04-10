@@ -488,6 +488,109 @@
         }
       }
     },
+    "/api/PolygonEntries": {
+      "get": {
+        "tags": [
+          "PolygonEntries"
+        ],
+        "parameters": [
+          {
+            "name": "polygonId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PolygonEntries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePolygonEntryRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePolygonEntryRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePolygonEntryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PolygonEntries/{id}": {
+      "get": {
+        "tags": [
+          "PolygonEntries"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PolygonEntries"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Polygons": {
       "get": {
         "tags": [
@@ -830,6 +933,29 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePolygonEntryRequest": {
+        "type": "object",
+        "properties": {
+          "polygonID": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createdByUserID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "categorie": {
+            "type": "string",
+            "nullable": true
+          },
+          "valoare": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

@@ -16,7 +16,9 @@ namespace Server_Licenta
         public DbSet<GrainParcelData> GrainParcelData { get; set; }
 
         public DbSet<AnimalParcelData> AnimalParcelData { get; set; }
-        
+
+        public DbSet<PolygonEntry> PolygonEntries { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -32,6 +34,7 @@ namespace Server_Licenta
             modelBuilder.Entity<UserRole>().ToTable("UserRole");
             modelBuilder.Entity<Polygon>().ToTable("Polygon");
             modelBuilder.Entity<PolygonPoint>().ToTable("PolygonPoint");
+            modelBuilder.Entity<PolygonEntry>().ToTable("PoligonEntries");
 
             // Configure PolygonPoint primary key
             modelBuilder.Entity<PolygonPoint>()
@@ -65,6 +68,11 @@ namespace Server_Licenta
         .HasForeignKey(pp => pp.PolygonId)
         .OnDelete(DeleteBehavior.Cascade);
             //15277e91-643b-4c66-88f2-53054d128b39 - keni : userid
+            
+
+            modelBuilder.Entity<PolygonEntry>()
+       .ToTable("PolygonEntries")  // Asigură-te că numele tabelului este cel dorit
+       .HasKey(pe => pe.PolygonEntryID);
         }
     }
 }
