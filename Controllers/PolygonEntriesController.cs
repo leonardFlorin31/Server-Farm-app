@@ -91,7 +91,7 @@ namespace Server_Licenta.Controllers
 
             var entry = new PolygonEntry
             {
-                PolygonEntryID = Guid.NewGuid(),
+                PolygonEntryID = request.PolygonEntryID,
                 // Permitem ca PolygonID să fie null, conform cerinței:
                 PolygonID = request.PolygonID,
                 CreatedByUserID = request.CreatedByUserID,
@@ -137,6 +137,8 @@ namespace Server_Licenta.Controllers
     public class CreatePolygonEntryRequest
     {
         // Permite null: acesta este identificatorul poligonului asociat (opțional)
+        public Guid PolygonEntryID { get; set; }
+
         public Guid? PolygonID { get; set; }
         
         // ID-ul utilizatorului care a creat intrarea (nu este opțional)

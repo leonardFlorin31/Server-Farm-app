@@ -940,6 +940,10 @@
       "CreatePolygonEntryRequest": {
         "type": "object",
         "properties": {
+          "polygonEntryID": {
+            "type": "string",
+            "format": "uuid"
+          },
           "polygonID": {
             "type": "string",
             "format": "uuid",
