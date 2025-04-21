@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text.Json;
@@ -34,6 +35,51 @@ namespace Server_Licenta.Controllers
             return Ok(new { Message = "Autentificare reușită!", Username = user.Username,
                                                                 UserId = user.Id });
             }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            // 1) Validări simple
+            if (string.IsNullOrWhiteSpace(request.Username) ||
+                string.IsNullOrWhiteSpace(request.Email) ||
+                string.IsNullOrWhiteSpace(request.Password) ||
+                string.IsNullOrWhiteSpace(request.Name) ||
+                string.IsNullOrWhiteSpace(request.LastName)) 
+            {
+                return BadRequest(new { Message = "Toate câmpurile (Username, Email, Password) sunt obligatorii." });
+            }
+
+            // 2) Verifică unicitatea
+            if (await _context.User.AnyAsync(u => u.Username == request.Username))
+                return Conflict(new { Message = "Nume de utilizator deja folosit." });
+
+            if (await _context.User.AnyAsync(u => u.Email == request.Email))
+                return Conflict(new { Message = "Email deja folosit." });
+
+            // 3) Creează entitatea User (poți adăuga aici hashing pentru parolă)
+            var user = new User
+            {
+                Id = Guid.NewGuid(),
+                Name = request.Name,
+                LastName = request.LastName,
+                Username = request.Username,
+                Email = request.Email,
+                Password = request.Password
+
+            };
+
+            // 4) Salvează în baza de date
+            _context.User.Add(user);
+            await _context.SaveChangesAsync();
+
+            // 5) Returnează 201 Created cu locația noului resource
+            return CreatedAtAction(
+                nameof(GetUserByUsername),
+                new { username = user.Username },
+                new { user.Id, user.Username, user.Email }
+            );
+        }
+
 
 
         [HttpGet("{username}")]
@@ -92,5 +138,16 @@ namespace Server_Licenta.Controllers
     {
         public string Username { get; set; }
         public string Password { get; set; }
+    }
+
+    // DTO pentru înregistrare
+    public class RegisterRequest
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+
     }
 }
