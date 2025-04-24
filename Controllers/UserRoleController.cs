@@ -17,61 +17,62 @@ namespace Server_Licenta.Controllers
     public class UserRoleController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public UserRoleController(AppDbContext context)
-        {
-            _context = context;
-        }
+        public UserRoleController(AppDbContext ctx) => _context = ctx;
 
         [HttpPost("assign")]
         public async Task<IActionResult> Assign([FromBody] AssignRoleRequest req)
         {
-            if (string.IsNullOrWhiteSpace(req.Username) || string.IsNullOrWhiteSpace(req.RoleName))
-                return BadRequest("Username and RoleName are required.");
+            if (string.IsNullOrWhiteSpace(req.Username) ||
+                string.IsNullOrWhiteSpace(req.RoleName))
+                return BadRequest("Username + RoleName + CreatedBy are required.");
 
-            // 1) find-or-create the requested role
+            // 1) Find-or-create the Role FOR THIS ADMIN
             var role = await _context.Roles
-                .FirstOrDefaultAsync(r => r.RoleName == req.RoleName);
+                .FirstOrDefaultAsync(r =>
+                   r.RoleName == req.RoleName
+                && r.CreatedByUserId == req.CreatedBy);
+
             if (role == null)
             {
                 role = new Role
                 {
                     Id = Guid.NewGuid(),
                     RoleName = req.RoleName,
-                    CreatedByUserId = req.CreatedBy   // no creator tracked
+                    CreatedByUserId = req.CreatedBy
                 };
                 _context.Roles.Add(role);
                 await _context.SaveChangesAsync();
             }
 
-            // 2) load the target user
-            var target = await _context.User
+            // 2) Load the target user and their existing UserRoles→Role
+            var user = await _context.User
                 .Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
                 .FirstOrDefaultAsync(u => u.Username == req.Username);
-            if (target == null)
+
+            if (user == null)
                 return NotFound($"User '{req.Username}' not found.");
 
-            // 3) assign or overwrite
-            var existing = target.UserRoles.FirstOrDefault();
-            if (existing == null)
+            // 3) Remove any existing link this admin made
+            var oldLinks = user.UserRoles
+                .Where(ur => ur.Role.CreatedByUserId == req.CreatedBy)
+                .ToList();
+
+            if (oldLinks.Any())
+                _context.UserRoles.RemoveRange(oldLinks);
+
+            // 4) Add the new one
+            _context.UserRoles.Add(new UserRole
             {
-                // no role yet → assign new
-                _context.UserRoles.Add(new UserRole
-                {
-                    UserId = target.Id,
-                    RoleId = role.Id
-                });
-            }
-            else
-            {
-                // overwrite unconditionally
-                existing.RoleId = role.Id;
-                _context.UserRoles.Update(existing);
-            }
+                UserId = user.Id,
+                RoleId = role.Id
+            });
 
             await _context.SaveChangesAsync();
+
             return Ok(new
             {
-                Message = $"Role '{req.RoleName}' assigned to '{req.Username}'."
+                Message = $"[{req.CreatedBy}] '{req.RoleName}' assigned to '{req.Username}'."
             });
         }
     }
