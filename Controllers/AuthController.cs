@@ -98,7 +98,6 @@ namespace Server_Licenta.Controllers
             else
             {
                 Console.WriteLine("User is not admin");
-
             }
 
             // 5) Salvează în baza de date

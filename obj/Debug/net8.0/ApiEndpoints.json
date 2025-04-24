@@ -512,5 +512,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server_Licenta.Controllers.UserRoleController",
+    "Method": "Assign",
+    "RelativePath": "api/UserRole/assign",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "Server_Licenta.Controllers.AssignRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
