@@ -32,9 +32,13 @@ namespace Server_Licenta.Controllers
             }
 
             // Returnează un răspuns de succes
-            return Ok(new { Message = "Autentificare reușită!", Username = user.Username,
-                                                                UserId = user.Id });
-            }
+            return Ok(new
+            {
+                Message = "Autentificare reușită!",
+                Username = user.Username,
+                UserId = user.Id
+            });
+        }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
@@ -44,7 +48,7 @@ namespace Server_Licenta.Controllers
                 string.IsNullOrWhiteSpace(request.Email) ||
                 string.IsNullOrWhiteSpace(request.Password) ||
                 string.IsNullOrWhiteSpace(request.Name) ||
-                string.IsNullOrWhiteSpace(request.LastName)) 
+                string.IsNullOrWhiteSpace(request.LastName))
             {
                 return BadRequest(new { Message = "Toate câmpurile (Username, Email, Password) sunt obligatorii." });
             }
@@ -72,7 +76,35 @@ namespace Server_Licenta.Controllers
             _context.User.Add(user);
             await _context.SaveChangesAsync();
 
-            // 5) Returnează 201 Created cu locația noului resource
+            if (request.Role == true)
+            {
+                Console.WriteLine("User is admin");
+
+                var adminRole = new Role
+                {
+                    Id = Guid.NewGuid(),
+                    RoleName = "admin",
+                    CreatedByUserId = user.Id
+                };
+                _context.Roles.Add(adminRole);
+
+                user.UserRoles.Add(new UserRole
+                {
+                    UserId = user.Id,
+                    RoleId = adminRole.Id
+                });
+
+            }
+            else
+            {
+                Console.WriteLine("User is not admin");
+
+            }
+
+            // 5) Salvează în baza de date
+            await _context.SaveChangesAsync();
+
+            // 6) Returnează 201 Created cu locația noului resource
             return CreatedAtAction(
                 nameof(GetUserByUsername),
                 new { username = user.Username },
@@ -102,7 +134,7 @@ namespace Server_Licenta.Controllers
                 Name = user.Name,
                 LastName = user.LastName,
                 Email = user.Email,
-                
+
             };
 
             return Ok(userDto);
@@ -148,6 +180,8 @@ namespace Server_Licenta.Controllers
         public string Password { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
+
+        public bool Role { get; set; } // true pentru admin, false pentru user
 
     }
 }

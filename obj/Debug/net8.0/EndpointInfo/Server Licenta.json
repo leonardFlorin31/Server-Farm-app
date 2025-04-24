@@ -1133,6 +1133,9 @@
           "lastName": {
             "type": "string",
             "nullable": true
+          },
+          "role": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
