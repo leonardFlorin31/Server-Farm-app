@@ -26,6 +26,21 @@ namespace Server_Licenta.Controllers
                 string.IsNullOrWhiteSpace(req.RoleName))
                 return BadRequest("Username + RoleName + CreatedBy are required.");
 
+            var user = await _context.User
+                .Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
+                .FirstOrDefaultAsync(u => u.Username == req.Username);
+
+            if (user == null)
+                return NotFound($"User '{req.Username}' not found.");
+
+            var hasOtherAdminRole = user.UserRoles
+       .Any(ur => ur.Role.CreatedByUserId != req.CreatedBy);
+
+            if (hasOtherAdminRole)
+                return BadRequest(
+                  "This user already has a role assigned by another admin and cannot be reassigned.");
+
             // 1) Find-or-create the Role FOR THIS ADMIN
             var role = await _context.Roles
                 .FirstOrDefaultAsync(r =>
@@ -44,14 +59,7 @@ namespace Server_Licenta.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            // 2) Load the target user and their existing UserRoles→Role
-            var user = await _context.User
-                .Include(u => u.UserRoles)
-                    .ThenInclude(ur => ur.Role)
-                .FirstOrDefaultAsync(u => u.Username == req.Username);
-
-            if (user == null)
-                return NotFound($"User '{req.Username}' not found.");
+            
 
             // 3) Remove any existing link this admin made
             var oldLinks = user.UserRoles
