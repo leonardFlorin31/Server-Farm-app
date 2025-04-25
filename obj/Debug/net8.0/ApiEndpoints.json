@@ -515,6 +515,22 @@
   },
   {
     "ContainingType": "Server_Licenta.Controllers.UserRoleController",
+    "Method": "GetUserRole",
+    "RelativePath": "api/UserRole/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server_Licenta.Controllers.UserRoleController",
     "Method": "Assign",
     "RelativePath": "api/UserRole/assign",
     "HttpMethod": "POST",

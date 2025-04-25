@@ -83,5 +83,26 @@ namespace Server_Licenta.Controllers
                 Message = $"[{req.CreatedBy}] '{req.RoleName}' assigned to '{req.Username}'."
             });
         }
+
+        [HttpGet("{userId:guid}")]
+        public async Task<IActionResult> GetUserRole(Guid userId)
+        {
+            // Load the user’s UserRole → Role in one go
+            var userRole = await _context.UserRoles
+                .Include(ur => ur.Role)
+                .FirstOrDefaultAsync(ur => ur.UserId == userId);
+
+            if (userRole == null)
+                return NotFound(new { Message = $"No role assigned for user {userId}" });
+
+            // Return only the bits the client needs
+            return Ok(new
+            {
+                UserId = userRole.UserId,
+                RoleId = userRole.RoleId,
+                RoleName = userRole.Role.RoleName,
+                CreatedBy = userRole.Role.CreatedByUserId
+            });
+        }
     }
 }
