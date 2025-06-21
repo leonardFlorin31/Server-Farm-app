@@ -138,8 +138,54 @@ namespace Server_Licenta.Controllers
 
             return Ok(userDto);
         }
+        [HttpGet("users-by-role-creator/{username}")]
+        public async Task<IActionResult> GetUsersByRoleCreator(string username)
+        {
+            // Pas 1: Găsește utilizatorul curent și rolul său.
+            var currentUser = await _context.User
+                .Include(u => u.UserRoles)
+                .ThenInclude(ur => ur.Role)
+                .FirstOrDefaultAsync(u => u.Username == username);
+
+            if (currentUser == null)
+            {
+                return NotFound(new { Message = $"Utilizatorul '{username}' nu a fost găsit." });
+            }
+
+            // Extrage primul rol al utilizatorului.
+            var currentUserRole = currentUser.UserRoles.FirstOrDefault()?.Role;
+
+            if (currentUserRole == null)
+            {
+                return Ok(new List<object>());
+            }
+
+            // Pas 2: Identifică ID-ul utilizatorului care a creat rolul.
+            var roleCreatorId = currentUserRole.CreatedByUserId;
+
+            // Pas 3: Caută toți utilizatorii care au un rol creat de același utilizator,
+            // EXCLUZÂND utilizatorul care a făcut cererea.
+            var usersWithSameRoleCreator = await _context.User
+                .Where(u =>
+                    // Condiția inițială: rolul trebuie să fie creat de același utilizator
+                    u.UserRoles.Any(ur => ur.Role.CreatedByUserId == roleCreatorId) &&
+                    // NOUA CONDIȚIE: ID-ul utilizatorului din listă să fie diferit de cel al utilizatorului curent
+                    u.Id != currentUser.Id)
+                .Select(u => new
+                {
+                    u.Username,
+                    u.Name,
+                    u.LastName
+                })
+                .ToListAsync();
+
+            // Pas 4: Returnează lista filtrată.
+            return Ok(usersWithSameRoleCreator);
+        }
 
     }
+
+
 
 
 

@@ -304,6 +304,28 @@
         }
       }
     },
+    "/api/Auth/users-by-role-creator/{username}": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ParcelData": {
       "get": {
         "tags": [
@@ -833,6 +855,37 @@
         }
       }
     },
+    "/api/Task/create": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/UserRole/assign": {
       "post": {
         "tags": [
@@ -1208,6 +1261,32 @@
           },
           "role": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaskCreateRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByUsername": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignedToUsername": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

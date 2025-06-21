@@ -19,6 +19,8 @@ namespace Server_Licenta
 
         public DbSet<PolygonEntry> PolygonEntries { get; set; }
 
+        public DbSet<Task> Tasks { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -73,6 +75,18 @@ namespace Server_Licenta
             modelBuilder.Entity<PolygonEntry>()
        .ToTable("PolygonEntries")  // Asigură-te că numele tabelului este cel dorit
        .HasKey(pe => pe.PolygonEntryID);
+
+            modelBuilder.Entity<Task>()
+           .HasOne(t => t.CreatedByUser)
+           .WithMany() // Un utilizator poate crea mai multe task-uri
+           .HasForeignKey(t => t.CreatedByUserId)
+           .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Task>()
+                .HasOne(t => t.AssignedToUser)
+                .WithMany() // Un utilizator poate avea mai multe task-uri asignate
+                .HasForeignKey(t => t.AssignedToUserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

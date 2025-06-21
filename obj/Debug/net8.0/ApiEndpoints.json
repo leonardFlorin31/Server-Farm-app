@@ -178,6 +178,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Server_Licenta.Controllers.AuthController",
+    "Method": "GetUsersByRoleCreator",
+    "RelativePath": "api/Auth/users-by-role-creator/{username}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server_Licenta.Controllers.ParcelDataController",
     "Method": "GetAllParcelData",
     "RelativePath": "api/ParcelData",
@@ -509,6 +525,22 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskController",
+    "Method": "CreateTask",
+    "RelativePath": "api/Task/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TaskCreateRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
