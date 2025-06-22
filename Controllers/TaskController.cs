@@ -67,6 +67,101 @@ public class TaskController : ControllerBase
             AssignedTo = assignedToUser.Username
         });
     }
+
+    [HttpGet("user/{username}")]
+    public async Task<IActionResult> GetTasksForUser(string username)
+    {
+        var user = await _context.User.FirstOrDefaultAsync(u => u.Username == username);
+        if (user == null)
+        {
+            return NotFound(new { Message = $"Utilizatorul '{username}' nu a fost găsit." });
+        }
+
+        var tasks = await _context.Tasks
+            .Include(t => t.AssignedToUser)
+            .Where(t => t.CreatedByUserId == user.Id || t.AssignedToUserId == user.Id)
+            .OrderByDescending(t => t.CreatedAt)
+            .Select(t => new
+            {
+                t.Id, 
+                t.Title,
+                t.Description,
+                t.Status,
+                AssignedToUsername = t.AssignedToUser.Name + " " + t.AssignedToUser.LastName,
+                CanChangeStatus = true
+            })
+            .ToListAsync();
+
+        return Ok(tasks);
+    }
+
+    // METODA UPDATE
+    [HttpPut("update/{taskId}")]
+    public async Task<IActionResult> UpdateTaskStatus(Guid taskId, [FromBody] TaskStatusUpdateRequest request)
+    {
+        if (request == null || string.IsNullOrEmpty(request.NewStatus))
+        {
+            return BadRequest(new { Message = "Noul status este obligatoriu." });
+        }
+
+        // Caută task-ul în baza de date după ID.
+        var taskToUpdate = await _context.Tasks.FindAsync(taskId);
+
+        if (taskToUpdate == null)
+        {
+            return NotFound(new { Message = $"Task-ul cu ID-ul '{taskId}' nu a fost găsit." });
+        }
+
+        // Actualizează proprietatea Status.
+        taskToUpdate.Status = request.NewStatus;
+
+        try
+        {
+            // Salvează modificările în baza de date.
+            await _context.SaveChangesAsync();
+            return Ok(new { Message = "Statusul a fost actualizat cu succes." });
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            // Gestionează cazul în care task-ul a fost modificat sau șters de altcineva între timp.
+            return Conflict(new { Message = "Eroare de concurență. Datele au fost modificate de alt utilizator." });
+        }
+    }
+
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteTask([FromQuery] string title, [FromQuery] string username)
+    {
+        // Validare de bază pentru parametrii primiți
+        if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(username))
+        {
+            return BadRequest(new { Message = "Titlul și username-ul angajatului sunt obligatorii pentru ștergere." });
+        }
+
+        // Găsește utilizatorul căruia îi este asignat task-ul
+        var assignedToUser = await _context.User.FirstOrDefaultAsync(u => u.Username == username);
+        if (assignedToUser == null)
+        {
+            return NotFound(new { Message = $"Utilizatorul asignat '{username}' nu a fost găsit." });
+        }
+
+        // Găsește task-ul de șters.
+        // ATENȚIE: Această logică va șterge *primul* task care corespunde criteriilor. 
+        // Dacă mai multe task-uri au același titlu și sunt asignate aceluiași utilizator, doar unul va fi șters.
+        var taskToDelete = await _context.Tasks.FirstOrDefaultAsync(t => t.Title == title && t.AssignedToUserId == assignedToUser.Id);
+
+        if (taskToDelete == null)
+        {
+            return NotFound(new { Message = $"Nu a fost găsit un task cu titlul '{title}' asignat lui '{username}'." });
+        }
+
+        // Șterge task-ul din contextul bazei de date
+        _context.Tasks.Remove(taskToDelete);
+
+        // Salvează modificările
+        await _context.SaveChangesAsync();
+
+        return Ok(new { Message = "Task șters cu succes." });
+    }
 }
 
 
@@ -104,4 +199,9 @@ public class TaskCreateRequest
     public string Status { get; set; }
     public string CreatedByUsername { get; set; }
     public string AssignedToUsername { get; set; } // MODIFICAT
+}
+
+public class TaskStatusUpdateRequest
+{
+    public string NewStatus { get; set; }
 }

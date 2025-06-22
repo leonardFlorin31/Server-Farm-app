@@ -84,9 +84,9 @@
               "RelativeDocumentMoniker": "Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\TaskController.cs*",
               "RelativeToolTip": "Controllers\\TaskController.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwEYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAAAKsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T16:24:27.292Z",
+              "WhenOpened": "2025-06-22T10:02:10.875Z",
               "EditorCaption": ""
             },
             {
@@ -122,7 +122,7 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAwwLcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAuwLkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T19:05:08.881Z",
               "EditorCaption": ""
@@ -169,9 +169,9 @@
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\leofl\\Desktop\\Server Licenta\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AppDbContext.cs",
-              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\AppDbContext.cs*",
-              "RelativeToolTip": "AppDbContext.cs*",
-              "ViewState": "AgIAADwAAAAAAAAAAAAuwFgAAAAzAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\leofl\\Desktop\\Server Licenta\\AppDbContext.cs",
+              "RelativeToolTip": "AppDbContext.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAuwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T19:26:37.001Z",
               "EditorCaption": ""
